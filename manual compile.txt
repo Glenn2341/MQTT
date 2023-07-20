@@ -1,0 +1,29 @@
+gradle command: run -PappArgs="1883"
+
+Compile and Run:
+javac *.java
+cd ..
+java MQTT.MQTTBroker 1883
+
+ctrl C to end the process
+
+netstat -aon | findstr PORT_NUMBER  to see if the port is clear
+
+TESTING
+mosquitto_pub -h localhost -p 1883 -t "test/topic" -m "Hello, MQTT!"
+mosquitto_sub -h localhost -p 1883 -t "test/topic"
+
+
+
+--
+javac Client.java MQTTMessage.java Publish.java Subscribe.java Broker.java Topic.java
+
+
+
+
+/* clear a port
+ sudo lsof -i :1883
+
+ sudo kill -9 PID
+
+ */
